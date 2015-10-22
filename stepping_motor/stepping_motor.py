@@ -1,12 +1,26 @@
+###########################################################
+# Parts required:
+#  1. Sparkfun 200 steps/rev motor (ROB-10847)
+#  2. Beaglebone Black
+#  3. Sparkfun Easy Driver (ROB-12779)
+#
+# This uses the PyBBIO library and *not* the Adafruit_BBIO
+###########################################################
+__author__   = 'Paul Kincaid'
+__email__    = 'paul.m.kincaid@gmail.com'
+__github__   = 'https://github.com/Electronics-Ninja/BBB_python.git'
+__version __ = 1.0
+__date__     = 'October 21, 2015'
+
 from bbio import *
 from time import sleep
 from sys import exit
 
-stp = 'GPIO2_2'
-dir = 'GPIO2_3'  # Push LOW for forward movement, HIGH for reverse
-MS1 = 'GPIO2_5'
-MS2 = 'GPIO2_4'
-EN =  'GPIO1_13'  # Push LOW to allow motor control
+stp    = 'GPIO2_2'   # BBB Pin P8_7
+direct = 'GPIO2_3'   # Push LOW for forward movement, HIGH for reverse - BBB Pin P8_8
+MS1    = 'GPIO2_5'   # BBB Pin P8_9
+MS2    = 'GPIO2_4'   # BBB Pin P8_10
+EN     = 'GPIO1_13'  # Push LOW to allow motor control - BBB Pin P8_11
 
 pinMode(stp, OUTPUT)
 pinMode(direct, OUTPUT)
@@ -50,7 +64,7 @@ def loop():
 		moveMotor(360/1.8)
 
 	elif selection == 2:
-		digitalWrite(direct, LOW)	
+		digitalWrite(direct, LOW)
 		degree = input("How many degrees? ")
 		moveMotor(degree/1.8)
 
