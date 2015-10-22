@@ -9,14 +9,14 @@ MS2 = 'GPIO2_4'
 EN =  'GPIO1_13'  # Push LOW to allow motor control
 
 pinMode(stp, OUTPUT)
-pinMode(dir, OUTPUT)
+pinMode(direct, OUTPUT)
 pinMode(MS1, OUTPUT)
 pinMode(MS2, OUTPUT)
 pinMode(EN,  OUTPUT)
 
 def resetEDPins():
 	digitalWrite(stp, LOW)
-	digitalWrite(dir, LOW)
+	digitalWrite(direct, LOW)
 	digitalWrite(MS1, LOW)
 	digitalWrite(MS2, LOW)
 	digitalWrite(EN, HIGH)
@@ -44,18 +44,18 @@ def loop():
 	print "  [0] Exit"
 	print
 	selection = input("Please make a selection: ")
-	digitalWrite(EN, LOW)	
+	digitalWrite(EN, LOW)
 	if selection == 1:
-		digitalWrite(dir, LOW)	
+		digitalWrite(direct, LOW)
 		moveMotor(360/1.8)
 
 	elif selection == 2:
-		digitalWrite(dir, LOW)	
+		digitalWrite(direct, LOW)	
 		degree = input("How many degrees? ")
 		moveMotor(degree/1.8)
 
 	elif selection == 3:
-		digitalWrite(dir, HIGH)
+		digitalWrite(direct, HIGH)
 		moveMotor(360/1.8)
 
 	elif selection == 0:
