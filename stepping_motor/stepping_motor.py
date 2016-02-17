@@ -7,7 +7,8 @@
 # This uses the PyBBIO library and *not* the Adafruit_BBIO
 ###########################################################
 __author__   = 'Paul Kincaid'
-__email__    = 'paul.m.kincaid@gmail.com'
+__test__     = 'blah'
+__email__    = 'paul@electronics-ninja.io'
 __github__   = 'https://github.com/Electronics-Ninja/BBB_python.git'
 __version __ = 1.0
 __date__     = 'October 21, 2015'
